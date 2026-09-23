@@ -2,20 +2,20 @@
 
 This repository contains the Python implementation developed for the simulation of opinion dynamics, information diffusion, and echo chamber formation in social networks.
 
-The model represents users as nodes in a directed social network. Each user has a continuous opinion and a tolerance parameter. Publications propagate through the network, influencing the opinions of users who are exposed to and accept the content. Network connections can also evolve according to ideological distance and social recommendation.
+The model represents users as nodes in a directed social network. Each user has a continuous opinion, and the same tolerance level is  assumed for all users . Publications propagate through the network, influencing the opinions of users who are exposed to and accept the content. Network connections can also evolve according to ideological distance and social recommendation.
 
 ## Model components
 
 The computational model consists of the following components:
 
-* Social network generation using a Barabási-Albert network.
+* Social network generation using a Barabási-Albert network and Erdos Renyi.
 * Construction of a directed follower network.
 * Continuous initial opinions in the interval \([-1,1]\).
 * User tolerance.
 * Information diffusion through the network.
 * Opinion updating after publication exposure.
-* Network disconnections based on ideological distance.
-* Formation of new connections through social recommendation and ideological compatibility.
+* Network disconnections based on opinion distance.
+* Formation of new connections through social recommendation and opinions compatibility.
 * Calculation of the \(BC_{hom}\) bimodality coefficient.
 * Identification of groups of users with similar opinions.
 
@@ -27,7 +27,7 @@ The computational model consists of the following components:
 | Number of periods     |              20 |
 | Tolerance             |             0.5 |
 | Initial opinion range |         [-1, 1] |
-| Network model         | Barabási-Albert |
+| Network model         | Barabási-Albert or Erdős–Rényi |
 | \(m\)                 |               3 |
 | Network seed          |              42 |
 | Opinion seed          |             123 |
@@ -35,12 +35,17 @@ The computational model consists of the following components:
 Two publications are considered in the main simulation:
 
 $$
-\sigma_1 = 0.461954
+\sigma_1 =0.3615758 
 $$
 
 $$
-\sigma_2 = -0.3173158
+\sigma_2 = 0.673157
 $$
+The values you can be changed in the model
+
+$
+\sigma_3=-0.6170859
+$
 
 ## Installation
 
@@ -104,6 +109,8 @@ opinion-dynamics-echo-chambers/
 ![Initial state](figures/bNNvsS.png)
 
 ![Final state](figures/bNNvsSfinal.png)
+
+![Histograma](figures/grafica_hist.png)
 
 ## Research context
 
