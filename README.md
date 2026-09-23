@@ -32,8 +32,7 @@ The computational model consists of the following components:
 | Network seed          |              42 |
 | Opinion seed          |             123 |
 
-Two publications are considered in the main simulation:
-
+Two publications are considered in the main simulation. However, you can change the values of $\sigma$ and other parameters in the algorithm.
 $$
 \sigma_1 =0.3615758 
 $$
